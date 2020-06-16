@@ -1,16 +1,9 @@
-/*
-
-1. array: objetos(nome, tecnologias(novo array))
-
-
-*/
-
 const users = [
     {
         nome: 'Carlos',
         tecnologias: [
             'HTML',
-            'CSS'
+            'CSS',
         ]
     },
     {
@@ -29,6 +22,18 @@ const users = [
     }
 ]
 
+function workWithCSS(user) {
+    for (let i = 0; i < user.tecnologias.length; i++) {
+        if (user.tecnologias[i] == 'CSS' ) {
+            return true
+        }
+    }
+    return false
+}
+
 for (let i = 0; i < users.length; i++) {
-    console.log(`${users[i].nome} trabalha com ${users[i].tecnologias.join(', ')}`)
+    const userWorksWithCSS = workWithCSS(users[i])
+    if (userWorksWithCSS) {
+        console.log(`O usuário ${users[i].nome} trabalha com CSS!`)
+    }
 }
