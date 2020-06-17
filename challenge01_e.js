@@ -1,10 +1,3 @@
-/*
-
-1. array: objetos(nome, tecnologias(novo array))
-
-
-*/
-
 const users = [
     {
         nome: 'Carlos',
