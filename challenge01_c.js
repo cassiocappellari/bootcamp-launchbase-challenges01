@@ -1,11 +1,11 @@
-const empresa = {
-    nome: 'Rocketseat',
-    cor: 'Roxo',
-    foco: 'Programação',
-    endereço: {
-        rua: 'Rua Guilherme Gembala',
-        número: 260
+const company = {
+    name: 'Rocketseat',
+    color: 'Purple',
+    focus: 'Programming',
+    address: {
+        street: 'Guilherme Gembala street',
+        number: 260
     }
 }
 
-console.log(`A empresa ${empresa.nome} está localizada em ${empresa.endereço.rua}, ${empresa.endereço.número}`)
+console.log(`The company ${company.name} is located in ${company.address.number}, ${company.address.street}`)

@@ -11,9 +11,9 @@ const femaleCanRetire = gender == 'female' && contribution > 30 && contributionT
 let message = ""
 
 if (maleCanRetire || femaleCanRetire) {
-    message = (`${name}, você pode se aposentar!`)
+    message = (`${name}, you can retire!`)
 } else {
-    message = (`${name}, você ainda não pode se aposentar!`)
+    message = (`${name}, you can't retire!`)
 }
 
 console.log(message)
