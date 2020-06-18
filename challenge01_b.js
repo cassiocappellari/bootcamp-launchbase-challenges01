@@ -1,15 +1,19 @@
-const name = 'Cássio'
-const gender = 'M'
-const age = 32
-const contribution = 15
+const name = 'Silvana'
+const gender = 'female'
+const age = 48
+const contribution = 23
 
-const contributionRule = age + contribution
-const manCanRetire = gender == 'M' && contribution >= 35 && contributionRule >= 95
-const womanCanRetire = gender == 'F' && contribution >= 30 && contributionRule >= 85
+const contributionTime = age + contribution
 
+const maleCanRetire = gender == 'male' && contribution > 35 && contributionTime > 95
+const femaleCanRetire = gender == 'female' && contribution > 30 && contributionTime > 85
 
-if (manCanRetire || womanCanRetire) {
-    console.log(`${name}, você pode se aposentar!`)
+let message = ""
+
+if (maleCanRetire || femaleCanRetire) {
+    message = (`${name}, você pode se aposentar!`)
 } else {
-    console.log(`${name}, você ainda não pode se aposentar!`)
+    message = (`${name}, você ainda não pode se aposentar!`)
 }
+
+console.log(message)
