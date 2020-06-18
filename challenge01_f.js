@@ -1,39 +1,22 @@
 const users = [
-    {
-        nome: 'Carlos',
-        tecnologias: [
-            'HTML',
-            'CSS',
-        ]
-    },
-    {
-        nome: 'Jasmine',
-        tecnologias: [
-            'JavaScript',
-            'CSS'
-        ]
-    },
-    {
-        nome: 'Tuane',
-        tecnologias: [
-            'HTML',
-            'Node.js'
-        ]
-    }
+    {name: 'Carlos', technologies: ['HTML', 'CSS']},
+    {name: 'Jasmine', technologies: ['JavaScript', 'CSS']},
+    {name: 'Tuane', technologies: ['HTML', 'Node.js']}
 ]
 
-function workWithCSS(user) {
-    for (let i = 0; i < user.tecnologias.length; i++) {
-        if (user.tecnologias[i] == 'CSS' ) {
+function userCheckCSS(user) {
+    for (let technologies of user.technologies) {
+        if (technologies == 'CSS') {
             return true
         }
     }
     return false
 }
 
-for (let i = 0; i < users.length; i++) {
-    const userWorksWithCSS = workWithCSS(users[i])
-    if (userWorksWithCSS) {
-        console.log(`O usuário ${users[i].nome} trabalha com CSS!`)
+for (let userName of users) {
+    const userWorksWithCSS = userCheckCSS(userName)
+
+    if (userCheckCSS) {
+        console.log(`The user ${userName.name} works with CSS!`)
     }
 }
