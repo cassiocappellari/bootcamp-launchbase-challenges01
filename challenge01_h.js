@@ -7,17 +7,12 @@ const user = {
 function createTransaction(transaction) {
     user.transactions.push(transaction)
 
-    if (transaction.type == 'credit') {
+    if (transaction.type === 'credit') {
         user.balance += transaction.value
-    } else if (transaction.type == 'debit') {
+    } else {
         user.balance -= transaction.value
     }
 }
-
-createTransaction({type: 'credit', value: 50})
-createTransaction({type: 'credit', value: 120})
-createTransaction({type: 'debit', value: 80})
-createTransaction({type: 'debit', value: 30})
 
 function getHigherTransactionByType(type) {
     let higherTransaction
@@ -34,26 +29,40 @@ function getHigherTransactionByType(type) {
 }
 
 function getAverageTransactionValue() {
-    let transactionsValue = 0
-    for (let values of user.transactions) { 
-        transactionsValue += values.value
+    let sumValue = 0
+
+    for (let values of user.transactions) {
+        sumValue += values.value
     }
-    return transactionsValue / user.transactions.length
+
+    const averageValue = sumValue / user.transactions.length
+    return averageValue
 }
 
 function getTransactionsCount() {
-    let transactionCount = {
-        credit: 0,
-        debit: 0
-    }
+    let transactionTypeCount = {credit: 0, debit: 0}
+
     for (let types of user.transactions) {
         if (types.type == 'credit') {
-            transactionCount.credit++
+            transactionTypeCount.credit++
         } else {
-            transactionCount.debit++
+            transactionTypeCount.debit++
         }
     }
-    return transactionCount
+
+    return transactionTypeCount
 }
+
+createTransaction({ type: "credit", value: 50 });
+createTransaction({ type: "credit", value: 120 });
+createTransaction({ type: "debit", value: 80 });
+createTransaction({ type: "debit", value: 30 });
+
+console.log(user.balance)
+
+console.log(getHigherTransactionByType('credit'))
+console.log(getHigherTransactionByType('debit'))
+
+console.log(getAverageTransactionValue())
 
 console.log(getTransactionsCount())
