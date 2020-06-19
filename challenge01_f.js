@@ -13,10 +13,10 @@ function userCheckCSS(user) {
     return false
 }
 
-for (let userName of users) {
-    const userWorksWithCSS = userCheckCSS(userName)
+for (let user of users) {
+    const userWorksWithCSS = userCheckCSS(user)
 
-    if (userCheckCSS) {
-        console.log(`The user ${userName.name} works with CSS!`)
+    if (userWorksWithCSS) {
+        console.log(`The user ${user.name} works with CSS!`)
     }
 }
