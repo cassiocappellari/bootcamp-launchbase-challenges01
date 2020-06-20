@@ -4,9 +4,9 @@ const users = [
     {name: 'Tuane', technologies: ['HTML', 'Node.js']}
 ]
 
-function userCheckCSS(user) {
-    for (let technologies of user.technologies) {
-        if (technologies == 'CSS') {
+function checkIfUserUseCSS(user) {
+    for (let technologie of user.technologies) {
+        if (technologie == 'CSS'){
             return true
         }
     }
@@ -14,9 +14,9 @@ function userCheckCSS(user) {
 }
 
 for (let user of users) {
-    const userWorksWithCSS = userCheckCSS(user)
+    const checkCSS = checkIfUserUseCSS(user)
 
-    if (userWorksWithCSS) {
+    if (checkCSS) {
         console.log(`The user ${user.name} works with CSS!`)
     }
 }
