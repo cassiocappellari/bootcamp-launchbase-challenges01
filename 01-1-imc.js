@@ -1,11 +1,11 @@
-const name = 'Cássio'
-const weight = 60
-const height = 1.80
-const gender = 'male'
+const name = 'Carlos'
+const weight = 84
+const height = 1.88
+const gender = 'M'
 
 const imc = weight / (height * height)
 
-let message = ""
+let message = ''
 
 if (imc >= 30) {
     message = (`${name}, you are overweight!`)
